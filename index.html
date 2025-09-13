@@ -1,38 +1,226 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nilmee Salon - Home</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Salon Nilmee — premium hair, nails & beauty services. Book online for a relaxing, modern salon experience." />
+  <title>Salon Nilmee — Beauty • Style • You</title>
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Tailwind via CDN for rapid styling (replace with built CSS for production) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{--accent:#D946EF;--muted:#6B7280}
+    body{font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}
+    h1,h2,h3{font-family:'Playfair Display', serif}
+    /* subtle glass card */
+    .glass{background:rgba(255,255,255,0.72);backdrop-filter:blur(6px)}
+    /* hero overlay gradient */
+    .hero-gradient{background: linear-gradient(90deg, rgba(0,0,0,0.35), rgba(0,0,0,0.08));}
+    /* small animations */
+    .fade-up{transform:translateY(8px);opacity:0;animation:fadeUp .7s ease forwards}
+    @keyframes fadeUp{to{transform:none;opacity:1}}
+  </style>
 </head>
-<body>
-    <header>
-        <div class="navbar">
-            <a href="index.html">Home</a>
-            <a href="contact.html">Contact</a>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- NAV -->
+  <nav class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-3">
+      <div class="w-12 h-12 rounded-full bg-gradient-to-br from-pink-400 to-purple-500 flex items-center justify-center text-white font-bold">SN</div>
+      <div>
+        <div class="text-lg font-semibold">Salon Nilmee</div>
+        <div class="text-xs text-gray-500">Beauty & Style</div>
+      </div>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm">
+      <a href="#services" class="hover:text-gray-900">Services</a>
+      <a href="#gallery" class="hover:text-gray-900">Gallery</a>
+      <a href="#about" class="hover:text-gray-900">About</a>
+      <a href="#contact" class="hover:text-gray-900">Contact</a>
+    </div>
+    <div class="flex items-center gap-3">
+      <a href="#book" class="px-4 py-2 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow">Book Now</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="relative">
+    <div class="absolute inset-0">
+      <img src="https://images.unsplash.com/photo-1543168256-4188115761f5?auto=format&fit=crop&w=1800&q=80" alt="Salon interior" class="w-full h-[62vh] object-cover"/>
+      <div class="absolute inset-0 hero-gradient"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-6 py-24 flex items-center" style="min-height: 62vh;">
+      <div class="max-w-2xl glass p-8 rounded-2xl shadow-lg">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900">Welcome to <span style="color:var(--accent)">Salon Nilmee</span></h1>
+        <p class="mt-4 text-gray-700">A modern sanctuary for hair, nails and beauty — crafted looks, personalised care, lasting confidence.</p>
+
+        <div class="mt-6 flex gap-4">
+          <a href="#book" class="inline-flex items-center gap-3 px-5 py-3 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 text-white font-medium shadow">Book Appointment</a>
+          <a href="#services" class="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-gray-200">View Services</a>
         </div>
-    </header>
 
-    <section class="hero">
-        <h1>Welcome to Nilmee Salon</h1>
-        <p>Transform your beauty with our expert salon services in Gampaha!</p>
-    </section>
+        <div class="mt-6 grid grid-cols-3 gap-3 text-xs text-gray-600">
+          <div class="flex flex-col items-start"><span class="font-semibold">Expert Stylists</span><span>Trained & friendly</span></div>
+          <div class="flex flex-col items-start"><span class="font-semibold">Clean & Safe</span><span>Sanitised tools</span></div>
+          <div class="flex flex-col items-start"><span class="font-semibold">Premium Products</span><span>Top brands</span></div>
+        </div>
+      </div>
+    </div>
+  </header>
 
-    <section class="services">
-        <h2>Our Services</h2>
-        <ul>
-            <li>Haircuts & Styling</li>
-            <li>Facials</li>
-            <li>Manicures & Pedicures</li>
-            <li>Hair Coloring</li>
-            <li>Bridal Makeup</li>
+  <!-- SERVICES -->
+  <section id="services" class="max-w-7xl mx-auto px-6 py-16">
+    <h2 class="text-3xl font-semibold text-center">Our Services</h2>
+    <p class="text-center text-gray-600 mt-2">From cuts to colour to bridal glam — tailored services with a personal touch.</p>
+
+    <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- card -->
+      <div class="p-6 rounded-2xl glass shadow-sm fade-up">
+        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=900&q=60" alt="Haircut" class="w-full h-44 object-cover rounded-lg" />
+        <h3 class="mt-4 font-semibold">Haircut & Styling</h3>
+        <p class="mt-2 text-sm text-gray-600">Precision cuts, modern styles, styling for any occasion.</p>
+        <div class="mt-4"><span class="font-semibold">From LKR 800</span></div>
+      </div>
+
+      <div class="p-6 rounded-2xl glass shadow-sm fade-up" style="animation-delay:.08s">
+        <img src="https://images.unsplash.com/photo-1589987607522-1d0b7c8c6b9f?auto=format&fit=crop&w=900&q=60" alt="Manicure" class="w-full h-44 object-cover rounded-lg" />
+        <h3 class="mt-4 font-semibold">Nails & Manicure</h3>
+        <p class="mt-2 text-sm text-gray-600">Classic or creative nail art, gel polish and treatments.</p>
+        <div class="mt-4"><span class="font-semibold">From LKR 600</span></div>
+      </div>
+
+      <div class="p-6 rounded-2xl glass shadow-sm fade-up" style="animation-delay:.16s">
+        <img src="https://images.unsplash.com/photo-1548207854-627a3cfc58f0?auto=format&fit=crop&w=900&q=60" alt="Makeup" class="w-full h-44 object-cover rounded-lg" />
+        <h3 class="mt-4 font-semibold">Makeup & Bridal</h3>
+        <p class="mt-2 text-sm text-gray-600">Glam looks, soft natural makeup and bridal packages.</p>
+        <div class="mt-4"><span class="font-semibold">From LKR 3500</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="bg-white py-16">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl font-semibold text-center">Gallery</h2>
+      <p class="text-center text-gray-600 mt-2">A few of our favourite transformations.</p>
+
+      <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+        <img src="https://images.unsplash.com/photo-1502673530728-f79b4cab31b1?auto=format&fit=crop&w=800&q=60" alt="client 1" class="w-full h-44 object-cover rounded-lg shadow-sm" />
+        <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=60" alt="client 2" class="w-full h-44 object-cover rounded-lg shadow-sm" />
+        <img src="https://images.unsplash.com/photo-1541534401786-9f3b6b6f3d3f?auto=format&fit=crop&w=800&q=60" alt="client 3" class="w-full h-44 object-cover rounded-lg shadow-sm" />
+        <img src="https://images.unsplash.com/photo-1478145046317-39f10e56b5e9?auto=format&fit=crop&w=800&q=60" alt="client 4" class="w-full h-44 object-cover rounded-lg shadow-sm" />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT & TESTIMONIAL -->
+  <section id="about" class="max-w-7xl mx-auto px-6 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h2 class="text-3xl font-semibold">About Salon Nilmee</h2>
+        <p class="mt-4 text-gray-600">Founded with a love for detail and modern beauty, Salon Nilmee blends creativity with care. Our team is trained in the latest techniques and dedicated to a comfortable, safe experience.</p>
+
+        <ul class="mt-6 space-y-3 text-gray-700">
+          <li>• Friendly, professional stylists</li>
+          <li>• Premium products & hygiene standards</li>
+          <li>• Packages for weddings & events</li>
         </ul>
-    </section>
 
-    <footer>
-        <p>Contact us: <strong>0774570509 / 0714848486</strong></p>
-        <p>Location: Gampaha</p>
-    </footer>
+        <div class="mt-6">
+          <a href="#contact" class="px-4 py-2 rounded-full border border-gray-200">Get in touch</a>
+        </div>
+      </div>
+
+      <div class="p-6 rounded-2xl glass shadow-sm">
+        <h3 class="font-semibold">What clients say</h3>
+        <blockquote class="mt-4 text-gray-600">"Lovely team, amazing result — my hair has never looked better. Highly recommend!" <span class="block mt-2 text-sm text-gray-500">— Anushi R.</span></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING / CONTACT -->
+  <section id="contact" class="bg-gradient-to-b from-white to-gray-50 py-16">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="p-8 rounded-2xl glass shadow">
+        <h2 class="text-2xl font-semibold">Book an Appointment</h2>
+        <p class="mt-2 text-gray-600">Use the form to request a time — we will confirm by phone.</p>
+
+        <form id="bookingForm" class="mt-6 space-y-4">
+          <div>
+            <label class="text-sm">Full name</label>
+            <input required class="w-full mt-2 p-3 rounded-lg border" placeholder="Your name" />
+          </div>
+          <div>
+            <label class="text-sm">Phone</label>
+            <input required class="w-full mt-2 p-3 rounded-lg border" placeholder="07xxxxxxxx" />
+          </div>
+          <div>
+            <label class="text-sm">Service</label>
+            <select class="w-full mt-2 p-3 rounded-lg border">
+              <option>Haircut & Styling</option>
+              <option>Colouring</option>
+              <option>Manicure / Pedicure</option>
+              <option>Makeup / Bridal</option>
+            </select>
+          </div>
+          <div>
+            <label class="text-sm">Preferred date & time</label>
+            <input type="datetime-local" class="w-full mt-2 p-3 rounded-lg border" />
+          </div>
+
+          <button type="submit" class="w-full py-3 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 text-white font-medium">Request Booking</button>
+        </form>
+
+        <p id="formMsg" class="mt-4 text-sm text-green-600 hidden">Thanks! We received your request.</p>
+      </div>
+
+      <div class="p-8 rounded-2xl glass shadow">
+        <h3 class="font-semibold">Contact & Hours</h3>
+        <p class="mt-3 text-gray-600">Address: 123 Galle Road, Colombo (replace with real address)</p>
+        <p class="mt-2 text-gray-600">Phone: +94 71 123 4567</p>
+        <p class="mt-2 text-gray-600">Open: Tue–Sun 10:00 — 20:00</p>
+
+        <div class="mt-6">
+          <iframe class="w-full h-48 rounded-lg" src="https://www.google.com/maps?q=Colombo&output=embed" aria-hidden="false"></iframe>
+        </div>
+
+        <div class="mt-6 flex gap-3">
+          <a href="#" aria-label="Instagram" class="p-3 rounded-lg border">IG</a>
+          <a href="#" aria-label="Facebook" class="p-3 rounded-lg border">FB</a>
+          <a href="#" aria-label="WhatsApp" class="p-3 rounded-lg border">WA</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="mt-12 bg-white py-8">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+      <div class="text-sm text-gray-600">© <span id="year"></span> Salon Nilmee — All rights reserved</div>
+      <div class="text-sm text-gray-600">Designed with ❤️</div>
+    </div>
+  </footer>
+
+  <!-- Simple JS for interactivity (no backend) -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // fake booking form handler
+    const form = document.getElementById('bookingForm');
+    const msg = document.getElementById('formMsg');
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      msg.classList.remove('hidden');
+      setTimeout(()=>{msg.classList.add('hidden'); form.reset();}, 2500);
+    });
+  </script>
+
 </body>
 </html>
